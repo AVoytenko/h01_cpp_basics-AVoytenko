@@ -27,17 +27,15 @@ Book::Book(const std::string &title,
   content_ = content;
   genre_ = genre;
   publisher_ = publisher;
+  authors_ = authors;
   // Tip 1: остались слезы на щеках, осталось лишь инициализировать поля ...
 }
 
 // 2. реализуйте метод ...
 bool Book::AddAuthor(const Author &author) {
 
-    for (auto currAuthor: authors_) {
-
-        auto name_1 = currAuthor.GetFullName();
-        auto name_2 = author.GetFullName();
-        if (name_1 == name_2) return false;
+    for (Author &currAuthor: authors_) {
+        if (currAuthor == author) {return false; }
     }
     authors_.push_back(author);
 

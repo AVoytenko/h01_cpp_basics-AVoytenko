@@ -32,9 +32,9 @@ ResizeStorageStatus resize_storage(Book *&storage, int size, int new_capacity) {
         }
 
         // здесь мог бы быть ваш сотрясающий землю и выделяющий память код ...
-        storage_capacity_=kInitStorageCapacity;
-        storage_= new Book[kInitStorageCapacity];
-        storage_size_= 0;
+
+        storage_capacity_= kInitStorageCapacity;
+        storage_= new Book[storage_capacity_];
     }
 
 // 3. реализуйте деструктор ...
